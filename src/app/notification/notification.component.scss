@@ -1,0 +1,46 @@
+.notification {
+  position: relative;
+  width: 250px;
+  height: 60px;
+  background: #313643CC 0% 0% no-repeat padding-box;
+  display: flex;
+  justify-content: space-around;
+  opacity: 0;
+  animation: .3s .3s showNotification ease-out forwards;
+  @keyframes showNotification {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+  }
+
+
+  .close-icon {
+    position: absolute;
+    cursor: pointer;
+    top: 4px;
+    right: 4px;
+    color: #FFFFFF;
+    font-size: 10px;
+  }
+  .copy-icon {
+    color: #F7AB29;
+    font-size: 14px;
+  }
+  .magenta-color {
+    color: #E63782;
+  }
+  div {
+    margin: auto;
+  }
+  div.icon {
+    flex-basis: 20%;
+    padding: 0px 0 0 10px;
+  }
+  div.message {
+    flex-basis: 80%;
+    padding: 10px 0;
+    font: 300 14px/19px Roboto;
+    letter-spacing: 0px;
+    color: #FFFFFF;
+    text-align: left;
+  }
+}

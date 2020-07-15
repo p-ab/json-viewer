@@ -1,0 +1,155 @@
+:host {
+  display: flex;
+  flex-flow: column nowrap;
+  padding-top: 84px;
+
+  app-notification {
+    position: absolute;
+    right: 40px;
+    bottom: 60px;
+  }
+  h2 {
+    text-align: center;
+    letter-spacing: 0px;
+    color: #313643;
+    padding: 10px;
+    margin: 0;
+    font: 500 32px/30px Roboto;
+  }
+  .json-container {
+    position: relative;
+    display: flex;
+    flex-flow: column nowrap;
+    width: 1000px;
+    max-width: 100%;
+    min-height: 652px;
+    height: calc(100vh - 148px);
+    overflow: hidden;
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    border: 1px solid #E6ECF5;
+    border-radius: 10px 10px 0px 0px;
+    margin: auto;
+
+
+    p.json-placeholder {
+      position: relative;
+      top: -50px;
+      margin: auto;
+      padding: 0;
+      text-align: center;
+      letter-spacing: 0px;
+      color: #E6ECF5;
+      font: 500 32px/30px Roboto;
+    }
+
+    button.add-btn {
+      position: absolute;
+      z-index: 2;
+      top: 40px;
+      right: 60px;
+      border: none;
+      outline: none;
+      background: #22A4DC 0% 0% no-repeat padding-box;
+      border-radius: 10px;
+      letter-spacing: 0px;
+      padding: 5px 13px;
+      color: #FFFFFF;
+      font: 300 14px/30px Roboto;
+      cursor: pointer;
+    }
+
+    ngx-dropzone {
+      position: absolute;
+      z-index: 1;
+      border: none;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+    }
+
+    ngx-json-viewer, .json-object {
+      position: absolute;
+      z-index: 1;
+      border: none;
+      width: 100%;
+      height: 100%;
+      text-align: left;
+      box-sizing: border-box;
+      padding-top: 120px;
+      padding-left: 37px;
+      padding-right: 62px;
+    }
+
+    .json-object {
+      font: 300 14px/30px Roboto;
+      letter-spacing: 0px;
+      color: #888EA7;
+      overflow: auto;
+      padding-bottom: 20px;
+
+      &--empty {
+        color: #E6ECF5;
+      }
+
+      span, i {
+        padding-left: 10px;
+      }
+
+      ul {
+        list-style: none;
+        margin: 0;
+        padding-left: 0;
+      }
+      li {
+        counter-increment: number;
+        padding-left: 10px;
+        .copy-icon {
+          display: none;
+          color: #F7AB29;
+        }
+
+        &:hover {
+          cursor: pointer;
+          background: #E6ECF5 0% 0% no-repeat padding-box;
+          .copy-icon {
+            display: inline-block;
+          }
+        }
+
+        .gray-line {
+          display: inline-block;
+          vertical-align: middle;
+          min-width: 21px;
+          height: 0px;
+          border: 1px solid #E6ECF5;
+          margin-left: 10px;
+        }
+        @mixin width-class($size) {
+          .w-level-#{$size} {
+            display: inline-block;
+            width: $size * 21px;
+          }
+        }
+        @mixin dynwidths($size-list) {
+          @each $size in $size-list {
+            @include width-class($size)
+          }
+        }
+        @include dynwidths(1 2 3 4 5 6 7 8 9 10);
+
+        .key-black-color {
+          color: #313643;
+        }
+        .entry-green-color {
+          color: #AAC72E;
+        }
+      }
+      li::before {
+        content: counter(number)" ";
+      }
+      li:hover::before {
+        color: #FFFFFF;
+      }
+    }
+  }
+}

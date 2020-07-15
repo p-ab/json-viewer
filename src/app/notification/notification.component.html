@@ -1,0 +1,7 @@
+<div class="notification">
+  <i class="ti ti-close close-icon" (click)="onClick.emit('')"></i>
+  <div class="icon">
+    <i [ngClass]="['fa fa-files-o copy-icon', type === 'error' ? 'magenta-color' : '']" aria-hidden="true"></i>
+  </div>
+  <div class="message">{{text}}</div>
+</div>
