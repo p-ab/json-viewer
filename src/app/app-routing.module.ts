@@ -3,10 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { JsonViewerComponent } from './json-viewer/json-viewer.component';
 
-const routes: Routes = [
-  { path: '', redirectTo: '/json-view', pathMatch: 'full' },
-  { path: 'json-view', component: JsonViewerComponent }
-];
+const routes: Routes = [{ path: '', component: JsonViewerComponent }];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
